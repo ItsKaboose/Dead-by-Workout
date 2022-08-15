@@ -27,7 +27,7 @@ If you want written step by step instructions here you go:
 1. Connect your Titan Two to your PC via the PROG port
 2. Open up the Gtuner software
 3. Move the DeadbyWorkout.gpc file into the Memory slot of your choice
-# 4. Make sure the Titan Two is set up to output 
+4. Make sure the Titan Two is set up to output as an Xbox 360 Controller
 5. Swap the USB cable to the OUTPUT port of the Titan Two
 6. Sync up the JoyCons with the Titan Two as follows:
     - Hold the left JoyCon vertical and hold down the sync button of both the Titan Two (the arrow on the right) and the JoyCon
@@ -45,10 +45,22 @@ If you want written step by step instructions here you go:
 
 ### Setting up the Controls 
 
+   -Make sure the script is off or use an Xbox Controller when setting up the controls! 
+   
+   -It may not seem to make since for actual gameplay but the script will "correct" the controls so dont worry too much about that.
+
+
+
 In DBD make sure you set the controller controls to the following:
-  - It may not seem to make since for actual gameplay but the script will "correct" the controls so dont worry too much about that.
-  
-  # hey do this part
+* Run- LB
+* Crouch- Right DPad
+* Drop Item- B
+* Use Item- Y
+* Pickup Item/Interactions- X
+* Actions- A
+* Activate Ability- A
+* Wiggle Right/Left- B
+
   
 
 ### FAQ
