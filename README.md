@@ -54,12 +54,13 @@ In DBD make sure you set the controller controls to the following:
 ### FAQ
 
 * Do you need the Titan Two to do this?
-  - You may be able to set it up with the Cronus Zen (see here: # link to SuperLois video on it) But I havent tested that so I dont hnestly know!
+  - You may be able to set it up with the Cronus Zen (see SuperLois64's video on that here: https://www.youtube.com/watch?v=b0hKHsAgjag) But I havent tested that so I dont honestly know!
 
-* Why does it kick you off the gen when working on gens and doing skillchecks?
+* Why do Skill Checks sometimes stop you from working on gens/healing??
   - I'll be honest, I'm not a programmer so the code isnt perfect. Th eonly thing I can think of is that it thinks you started to move and therefore kicks you off the gen.
   
 * Why doesnt the code seem to work in game?
+    - Make sure your controls are set up correctly in game (see "Setting up Controls" above)
     - Make sure the lights of the JoyCons are in the top spot otherwise the game will consider it as "player 2" and not work. 
     - You may have to resync the JoyCons and restart the game, make sure the JoyCons are vertical when syncing!
    
