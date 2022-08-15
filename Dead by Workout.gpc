@@ -1,0 +1,228 @@
+#pragma METAINFO("Dead by Workout", 0, 90, "ItsKaboose")
+
+/*
+To celebrate 200 days of Swole-A-Day
+I made this Ring Fit mod for DBD
+Watch me suffer live: Twitch.tv/ItsKaboose
+
+Shoutout to SuperLouis64 for the inspiration
+from his Ring Fit mods!(@SuperLouis_64 on Twitter)
+
+Special thanks to Sloth for helping me test!
+(twitch.tv/angreesloth)
+*/
+
+
+bool controllerON;
+bool isRunning;
+bool isSquat;
+bool isArm;
+
+
+int runCheck; // check the value of SuperLouis' running algorithm
+
+
+init
+	{
+	controllerON = FALSE;
+	isRunning = FALSE;
+	isSquat = FALSE;
+	isArm = FALSE;
+	runCheck = 0;	
+	}
+
+main 
+{
+	nowRunning();
+	JoyConDrift(); 
+	
+/*
+You will always move the direction you are facing, it will make escaping
+a bit harder so try not to get seen!
+	
+<70= less IRL movement, >70= more IRL movement, feel free to change
+*/
+	if(runCheck >= 70)
+		{					
+		set_val(STICK_2_Y, -100.0); // Become the "Hold W" Gamer
+		}
+	
+//Sprint controls- Hold Right Bumper while moving
+	if(get_val(BUTTON_4) > 0.0)
+		{
+		set_val(BUTTON_4, 0.0);
+		set_val(BUTTON_7, 100.0);
+		}
+
+/*
+Crouching: Squat and Hold Right Trigger!
+You can use the Left Joycon for movement! MY IMMERSION!!!
+*/
+	if(get_val(ACCEL_1_Z) < -15.00 && get_val(BUTTON_5) > 0.0)
+		{
+		set_val(BUTTON_13, 100.0);
+		isSquat = TRUE;
+		}
+		else
+			{
+			if(check_release(BUTTON_5, 600))
+				{
+				isSquat = FALSE;
+				}
+			if(isSquat == FALSE)
+				{
+				set_val(BUTTON_13, 0.0);	
+				}
+			}	
+		
+/* 
+To work on: Gens, Sabo, Totems, Chests, Hatch/Doors
+you must: Hold your arms up and hold Y with the right Joycon 
+*/
+	if(get_val(ACCEL_2_Z) > 15.00 && get_val(BUTTON_17) > 0.0)
+		{
+		set_val(BUTTON_17, 100.0);
+		isArm = TRUE;
+		}
+	else
+		{
+		if(check_release(BUTTON_17, 600))
+			{
+			isArm = FALSE;
+			}
+		if(isArm == FALSE)
+			{
+			set_val(BUTTON_17, 0.0);	
+			}
+		}
+		
+/* 
+To use Items you must: Hold your arms up and hold X with the right Joycon 
+*/
+	if(get_val(ACCEL_2_Z) > 15.00 && get_val(BUTTON_14) > 0.0)
+		{
+		set_val(BUTTON_14, 100.0);
+		isArm = TRUE;
+		}
+	else
+		{
+			if(check_release(BUTTON_14, 600))
+				{
+				isArm = FALSE;
+				}
+			if(isArm == FALSE)
+				{
+				set_val(BUTTON_14, 0.0);	
+				}
+		}
+
+/*
+To do Skill Checks:	Squat while maintaining Arm Up
+*/
+	if(get_val(ACCEL_1_Z) < -13.00 && (isArm = TRUE)) //Squat fast!
+			{
+			set_val(BUTTON_8, 100.0);
+			}
+		else
+			{
+			set_val(BUTTON_8, 0.0);
+			}
+		
+		
+/*
+To use "Actions": Vault windows/pallets, Hide in Locker, Drop Pallet
+you must: Flick Ringcon Forward (make it flat) while hitting B with Right Joycon
+*/
+	if(get_val(BUTTON_16) == 100.0) 
+		{
+		if(get_val(ACCEL_2_Z) < -15.00) //Flick Check
+			{
+			set_val(BUTTON_16, 100.0);
+			}
+		else
+			{
+			set_val(BUTTON_16, 0.0);
+			}	
+		}
+				
+/*
+To wiggle out of Killers Grasp:
+Hold Right Bumper & tap A  to wiggle
+(Couldn't make the "Hip Shake" part work right sadly, maybe in an update)
+*/
+		if(get_val(BUTTON_4) == 100.0)
+			{					
+			if(get_val(BUTTON_17) > 0.0) //Hip Shake Left
+				{
+				//set_val(STICK_2_X, -100.0);	
+				set_val(BUTTON_17, 100.0); 
+				}
+			else
+				{
+				//set_val(STICK_2_X, 0.0);		
+				set_val(BUTTON_17, 0.0);
+				}	
+			}
+			
+		if(get_val(BUTTON_4) == 100.0)
+			{
+			if(get_val(BUTTON_15) > 0.0) //Hip Shake Right
+				{	
+				//set_val(STICK_2_X, 100.0);	
+				set_val(BUTTON_15, 100.0); 
+				}
+			else
+				{
+				//set_val(STICK_2_X, 0.0);		
+				set_val(BUTTON_15, 0.0);
+				}
+			}
+
+}
+
+	void nowRunning()
+	{	
+		if(get_val(ACCEL_1_Y) < -30.6)
+			{
+			runCheck = 100;	
+			}
+		if(get_val(ACCEL_1_Y) < -23.8 && get_val(ACCEL_1_Y) > -24.6)
+			{
+			runCheck--;
+			}
+		if(get_val(BUTTON_17) > 0.0)  //working on stuff disables run
+			{
+			runCheck = 0;
+			}
+		if(get_val(BUTTON_14) > 0.0) // using items disables run
+			{
+			runCheck = 0;	
+			}
+		if(get_val(BUTTON_5) > 0.0) //crouch disables run
+			{
+			runCheck = 0;	
+			}
+	}
+	
+	void JoyConDrift()
+	{
+	
+		if(get_val(STICK_2_X) < 20.0 && get_val(STICK_2_X) > - 20.0)
+			{
+			set_val(STICK_2_X, 0.0);
+			}
+		
+		if(get_val(STICK_2_Y) < 20.0 && get_val(STICK_2_Y) > - 20.0)
+			{
+			set_val(STICK_2_Y, 0.0);
+			}
+
+
+}
+	
+	void debug()
+		{
+		printf("%d", runCheck);
+		}
+
+
