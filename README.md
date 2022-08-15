@@ -61,6 +61,18 @@ In DBD make sure you set the controller controls to the following:
 * Activate Ability- A
 * Wiggle Right/Left- B
 
+
+### How to Play DBD with a RingCon
+
+* To Move- Run in place (you will always move in the direction you are facing)
+* To Sprint- Hold down RB while moving
+* To Crouch- Squat and hold Right Trigger (if you stop doing either you will no longer crouch)
+* To work on Gens, Sabo, Totems, Chests, Hatch/Doors- Hold your Arms up and hold Y on the Right JoyCon
+* To use Items- Hold Arms up and hold X with the Right Joycon
+* To do Skill Checks- Squat (more of a half squat) while keeping your Arms up
+* To do "Actions" (Vaulting, Lockers, Drop Pallet)- "Flick" RingCon forward (make it flat) while hitting B on the Right Joycon
+* To Wiggle out of Killer's Grasp- Tap A on the Right Joycon (you can turn it into a "workout" by doing Hip Shakes if you want)
+
   
 
 ### FAQ
