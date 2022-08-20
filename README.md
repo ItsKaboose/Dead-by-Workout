@@ -1,5 +1,5 @@
 # Dead-by-Workout
-A way to make Dead by Daylight compatible with Ring Fit controls! Using this will make you run to move in game, squat for Skill Checks, use your arms for actions in game, and MORE! 
+A way to make Dead by Daylight compatible with Ring Fit controls! Using this will make you run to move in game, squat for Skill Checks, use your arms for actions in game, and MORE! This mod is heavily inspired by SuperLouis64 and the amazing work he does, so go check out his mods here: https://github.com/SuperLouis64
 
 If you are crazy enough to use this for Twitch, YouTube, etc. please give me some credit (just a simple link to this page, nothing super special unless you want to!)
 If you find any bugs you can always let me know at https://twitter.com/ItsKaboose_ttv
