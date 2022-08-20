@@ -20,7 +20,7 @@ If you find any bugs you can always let me know at https://twitter.com/ItsKaboos
 
 ### Setting up the Mod
 
-If you want to watch the video tutorial on how to set it up and how it works, head here: 
+If you want to watch the video tutorial on how to set it up and how it works, head here: Video Tutorial soon!
 
 If you want written step by step instructions here you go:
 
